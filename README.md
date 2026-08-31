@@ -1,6 +1,6 @@
 # Dashboard Status Layanan
 
-Aplikasi web sederhana untuk menampilkan status beberapa layanan (online, offline, maintenance) dalam bentuk dashboard.
+Aplikasi web sederhana untuk menampilkan status beberapa layanan (online, offline, maintenance) dalam bentuk dashboard interaktif.
 
 ## Fitur
 
