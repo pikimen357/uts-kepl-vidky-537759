@@ -34,6 +34,11 @@ function renderStatus(servicesList) {
 // Hanya jalan di browser, bukan saat diimport di Node.js untuk testing
 if (typeof document !== "undefined") {
   renderStatus(services);
+
+  // Auto-refresh tampilan status setiap 10 detik
+  setInterval(() => {
+    renderStatus(services);
+  }, 10000);
 }
 
 // Ekspor untuk keperluan unit test (Node.js / CI)
