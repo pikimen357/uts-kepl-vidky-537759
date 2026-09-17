@@ -71,23 +71,23 @@ jobs:
     if: github.ref == 'refs/heads/main'
     environment: production
     steps:
-      - name: Step 1 - Pull kode terbaru
-        run: echo "1. Menarik kode terbaru dari branch main..."
+      - name: Step 1 - Kunci pintu (maintenance mode)
+        run: echo "1. Menjalankan php artisan down --retry=60..."
 
-      - name: Step 2 - Install dependency production
-        run: echo "2. Menjalankan composer install --no-dev --optimize-autoloader..."
+      - name: Step 2 - Ambil kode terbaru
+        run: echo "2. Menjalankan git pull origin main..."
 
-      - name: Step 3 - Set maintenance mode
-        run: echo "3. Mengaktifkan mode maintenance (php artisan down)..."
+      - name: Step 3 - Pasang dependensi
+        run: echo "3. Menjalankan composer install --no-dev --optimize-autoloader..."
 
-      - name: Step 4 - Jalankan migrasi database
+      - name: Step 4 - Ubah skema basis data
         run: echo "4. Menjalankan php artisan migrate --force..."
 
-      - name: Step 5 - Bersihkan dan cache ulang config
-        run: echo "5. Menjalankan php artisan config:cache dan route:cache..."
+      - name: Step 5 - Bangun ulang cache
+        run: echo "5. Menjalankan php artisan config:cache, route:cache, view:cache..."
 
-      - name: Step 6 - Restart service
-        run: echo "6. Merestart queue worker dan web server..."
+      - name: Step 6 - Muat ulang pekerja antrean
+        run: echo "6. Menjalankan php artisan queue:restart..."
 
-      - name: Step 7 - Matikan maintenance mode
-        run: echo "7. Menonaktifkan mode maintenance (php artisan up)..."
+      - name: Step 7 - Buka pintu kembali
+        run: echo "7. Menjalankan php artisan up..."
