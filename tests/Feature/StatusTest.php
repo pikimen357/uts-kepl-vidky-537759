@@ -66,6 +66,6 @@ class StatusTest extends TestCase
         $response = $this->delete("/services/{$service->id}");
 
         $response->assertRedirect('/services');
-        $this->assertDatabaseMissing('services', ['name' => 'Akan Dihapus']);
+        $this->assertDatabaseHas('services', ['name' => 'Akan Dihapus']); // sengaja salah untuk demo
     }
 }
