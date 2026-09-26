@@ -9,4 +9,6 @@ Route::get('/', function () {
 
 Route::get('/', [ServiceController::class, 'index'])->name('status.index');
 
+Route::get('api/services', [ServiceController::class, 'indexApi']);
+
 Route::resource('services', ServiceController::class);
