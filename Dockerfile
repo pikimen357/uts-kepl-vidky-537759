@@ -1,7 +1,7 @@
 # Dockerfile untuk status-web-laravel
 # Single-stage dulu (multi-stage baru minggu depan, sesuai materi Pertemuan 05)
 
-FROM php:8.3-cli-alpine
+FROM php:8.4-cli-alpine
 
 WORKDIR /var/www/html
 
