@@ -34,6 +34,28 @@ class ServiceController extends Controller
         ]);
     }
 
+
+    public function indexApi()
+    {
+        $services = Service::latest()->get();
+
+        return response()->json([
+            'success' => true,
+            'services' => $services,
+            'summary' => $this->getStatusSummary($services),
+            'lastUpdated' => now()->translatedFormat('d M Y H:i:s'),
+        ]);
+    }
+
+    public function show(Service $service)
+    {
+        return response()->json([
+            'success' => true,
+            'data' => $service,
+        ]);
+    }
+//    Baris comment ditambahkan
+
     public function create()
     {
         return view('services.create');

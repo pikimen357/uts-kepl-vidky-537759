@@ -1,0 +1,20 @@
+# Wajib menurut instruksi tugas
+node_modules
+vendor
+.git
+.env
+
+# Tambahan yang masuk akal untuk proyek ini
+.env.*
+!.env.example
+.github
+.idea
+storage/logs/*.log
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/views/*
+.phpunit.result.cache
+tests
+*.md
+
+bootstrap/cache/*.php
